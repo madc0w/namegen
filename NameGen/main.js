@@ -4,19 +4,19 @@ const consonants = ['b', 'bb', 'c', 'ch', 'cl', 'cr', 'd', 'dd', 'f', 'ff', 'fl'
 async function onLoad() {
 	const names = document.getElementById('name-table');
 	let html = '';
-	for (let i = 0; i < 2; i++) {
+	for (let i = 0; i < 80; i++) {
 		html += `<tr>`;
-		let word = 'google';
-		// if (Math.random() < 0.5) {
-		// 	word += vowels[Math.floor(Math.random() * vowels.length)];
-		// }
-		// const n = 2 + Math.floor(Math.random() * 3);
-		// for (let j = 0; j < n; j++) {
-		// 	word += consonants[Math.floor(Math.random() * consonants.length)];
-		// 	word += vowels[Math.floor(Math.random() * vowels.length)];
-		// }
+		let word = '';
+		if (Math.random() < 0.5) {
+			word += vowels[Math.floor(Math.random() * vowels.length)];
+		}
+		const n = 2 + Math.floor(Math.random() * 2);
+		for (let j = 0; j < n; j++) {
+			word += consonants[Math.floor(Math.random() * consonants.length)];
+			word += vowels[Math.floor(Math.random() * vowels.length)];
+		}
 		html += `<td>${word}</td>`;
-		const request = new XMLHttpRequest();
+		// const request = new XMLHttpRequest();
 
 		// request.onreadystatechange = function (event) {
 		// 	console.log('onreadystatechange ', event);
@@ -37,14 +37,14 @@ async function onLoad() {
 		// 	};
 		// };
 
-		request.open('GET', `https://www.${word}.com`, true);
-		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		request.setRequestHeader('Accept', '*/*');
+		// request.open('GET', `https://www.${word}.com`, true);
+		// request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		// request.setRequestHeader('Accept', '*/*');
 
-		request.onreadystatechange = function () {
-			console.log('onreadystatechange ', request);
-		};
-		request.send();
+		// request.onreadystatechange = function () {
+		// 	console.log('onreadystatechange ', request);
+		// };
+		// request.send();
 
 		// function callback(word, isUrlTaken) {
 		// 	console.log(isUrlTaken);
