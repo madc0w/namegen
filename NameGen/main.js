@@ -38,11 +38,11 @@ async function onLoad() {
 		// };
 
 		request.open('GET', `https://www.${word}.com`, true);
-		// request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		// request.setRequestHeader('Accept', '*/*');
+		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		request.setRequestHeader('Accept', '*/*');
 
 		request.onreadystatechange = function () {
-			console.log(request);
+			console.log('onreadystatechange ', request);
 		};
 		request.send();
 
