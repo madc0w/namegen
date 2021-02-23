@@ -37,7 +37,7 @@ async function onLoad() {
 		// 	};
 		// };
 
-		request.open('GET', `http://www.${word}.com`, true);
+		request.open('GET', `https://www.${word}.com`, true);
 		// request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 		// request.setRequestHeader('Accept', '*/*');
 
